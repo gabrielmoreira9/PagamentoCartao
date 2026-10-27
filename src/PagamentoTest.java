@@ -11,5 +11,9 @@ public class PagamentoTest {
      pagamento = new PagamentoBoleto();
      processador = new ProcessadorPagamento(pagamento);
      System.out.println(processador.processar(100));
+
+     pagamento = new PagamentoCrypto();
+     processador = new ProcessadorPagamento(pagamento);
+     System.out.println(processador.processar(100));
     }
 }
