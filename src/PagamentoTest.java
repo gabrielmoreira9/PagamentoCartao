@@ -1,12 +1,15 @@
 public class PagamentoTest {
     public static void main (String[] args) {
-     Pagamento pagamento = new PagamentoCartao();
-     System.out.println(pagamento.calcularValor(100));
+     Pagamento pagamento = new PagamentoPix();
+     ProcessadorPagamento processador = new ProcessadorPagamento(pagamento);
+     System.out.println(processador.processar(100));
+
+     pagamento  = new PagamentoCartao();
+     processador = new ProcessadorPagamento(pagamento);
+     System.out.println(processador.processar(100));
 
      pagamento = new PagamentoBoleto();
-     System.out.println(pagamento.calcularValor(100));
-
-     pagamento = new PagamentoPix();
-     System.out.println(pagamento.calcularValor(100));
+     processador = new ProcessadorPagamento(pagamento);
+     System.out.println(processador.processar(100));
     }
 }
